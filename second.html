@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Whole Wheat Pancakes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: #eee0eb;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1{
+color: #811456;
+font-size: 50px;
+
+	}
+
+	h2, h3, h4 {
+      color: #590644;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px dotted #FF1493;
+      margin: 20px 0;
+    }
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      display: block;
+      margin: 10px 0;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .nav {
+      font-size: 14px;
+      background-color: #4ab167;
+      padding: 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .nutrition, .review-form {
+      background-color: #ccc;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+
+    form input, form textarea {
+      width: 50%;
+      padding: 8px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    form button {
+      background-color: #6b3e26;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    form button:hover {
+      background-color: #5a3220;
+    }
+
+    .rating {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .rating input {
+      display: none;
+    }
+
+    .rating label {
+      font-size: 24px;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .rating input:checked ~ label {
+      color: #ccc;
+    }
+.rating input:checked + label,
+.rating input:checked + label ~ label {
+  color: #C71585; /* dark pink for selected and left-side stars */
+}
+
+    .rating label:hover,
+    .rating label:hover ~ label {
+      color: #FF1493;
+    }
+.jump-btn {
+  background-color: #FFA07A;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 15px 0;
+  transition: background-color 0.3s ease;
+}
+
+.jump-btn:hover {
+  background-color: #FF4500;
+}
+.review-form {
+  width: 100%;
+  max-width: 400px;       
+  margin-left: 0;         
+  padding: 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+.navbar {
+  background-color: #544e4b;
+  ;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-menu li {
+  position: relative;
+  padding: 10px 15px;
+  border-radius: 4px;
+  /* smooth rounded corners */
+  transition: background-color 0.3s ease;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #020201;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #473b32;
+  padding: 10px 0;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  border-radius: 5px;
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+}
+
+.dropdown-menu li a {
+  color: white;
+  display: block;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 16px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.nav-icons span:hover {
+  background-color: #0a1c0b;
+}
+
+.nav-menu li:hover {
+  background-color: #afafac;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-left: 20px;
+}
+
+.search-form input {
+  padding: 8px 12px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 160px;
+}
+
+.search-form button {
+  background-color: #3d3c39;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  color: black;
+}
+
+.search-form button:hover {
+  background-color: #494741;
+}
+
+  </style>
+</head>
+
+<body>
+<header>
+    <nav class="navbar">
+      <div class="logo">SRTC Recipies</div>
+      <ul class="nav-menu">
+        <li class="dropdown">
+          <a href="#">Breakfast</a>
+          <ul class="dropdown-menu">
+            <li><a href="second.html">Whole Wheat Pancakes</a></li>
+            <li><a href="#">Muffin</a></li>
+            <li><a href="#">Coffe smoothie</a></li>
+            <li><a href="#">Sandwich</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Lunch</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Biriyani</a></li>
+            <li><a href="#">Hummus Pizza</a></li>
+            <li><a href="#">Bow Tie Pepperoni Pasta Salad</a></li>
+            <li><a href="#">Simple Pasta Toss</a></li>
+            <li><a href="#">Fast Chicken and Rice</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Desserts</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Fried Oreos</a></li>
+            <li><a href="#">chocolate cake</a></li>
+            <li><a href="#">Banana foster</a></li>
+            <li><a href="#">Cream Cheese Brownies</a></li>
+            <li><a href="#">Strawbery Pie</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Dinner</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Lasagna</a></li>
+            <li><a href="#">Macaroni And Cheese</a></li>
+            <li><a href="#">Chicken Parmesan</a></li>
+            <li><a href="#">Scalloped Potatoes</a></li>
+            <li><a href="#">Mexican Rice</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Appetiers and Snacks</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Mozzarella Sticks</a></li>
+            <li><a href="#">Cheesy Shell Taco Bites</a></li>
+            <li><a href="#">Sausage Balls</a></li>
+            <li><a href="#">Simple Pasta Toss</a></li>
+            <li><a href="#">Easy bacon wrapped dates</a></li>
+            <li><a href="#">Puff pastry Canapes</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Drinks </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Frozen Strawberry daiquiris</a></li>
+            <li><a href="#">Chi chi cocktail</a></li>
+            <li><a href="#">Watermelon Herb Cooler</a></li>
+            <li><a href="#">Viegin Margarita</a></li>
+            <li><a href="#">Coffe Smoothie</a></li>
+            <li><a href="#">Peach paradeise</a></li>
+          </ul>
+        </li>
+        <li><a href="#">About</a></li>
+        <form class="search-form" action="#" method="get">
+          <input type="text" placeholder="Search recipes..." name="q" />
+          <button type="submit">🔍</button>
+        </form>
+
+    </nav>
+  </header>
+
+  <h1>SRTC Recipes</h1>
+  <hr>
+  <div class="nav">Recipes | idk</div>
+<table border="0">
+<tr>
+<td style="padding: 20px;">
+  <h1>Whole Wheat Pancakes</h1></td>
+<td>
+  <img src="pancake.jpg" alt="Whole Wheat Pancakes">
+</td>
+</tr>
+</table>
+  <button class="jump-btn" onclick="document.getElementById('recipe').scrollIntoView({ behavior: 'smooth' });">
+  Jump to Recipe↓
+</button>
+
+  <p>
+    <strong>Ready in:</strong> 20 minutes<br>
+    <strong>Ingredients:</strong> 8<br>
+    <strong>Serves:</strong> 4
+  </p>
+
+  <div class="nutrition">
+    <h4>Nutrition Information</h4>
+    <p>Calories: 220 per serving</p>
+  </div>
+
+  <hr>
+<table border="0" style="width: 100%;" >
+<tr>
+<td style="width: 50%; vertical-align: top; padding-right: 20px;" class="review-form">
+<div id="recipe">
+  <h2>Ingredients</h2>
+  <ul>
+    <li>1 cup whole wheat flour</li>
+    <li>2 tablespoons sugar</li>
+    <li>1 teaspoon baking powder</li>
+    <li>1/2 teaspoon baking soda</li>
+    <li>Pinch of salt</li>
+    <li>1 cup milk</li>
+    <li>1 egg</li>
+    <li>2 tablespoons oil</li>
+  </ul>
+</td>
+<td style="width: 50%; vertical-align: top;" class="review-form">
+  <h2>Directions</h2>
+  <ol>
+    <li>Mix dry ingredients in one bowl.</li>
+    <li>Whisk wet ingredients in another.</li>
+    <li>Combine both, stir gently.</li>
+    <li>Cook on a hot pan until golden on both sides.</li>
+  </ol>
+</td>
+</tr>
+</table>
+</div>
+  <hr>
+
+  <h3>Reviews</h3>
+  <div class="review-form">
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Your name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Your email" required>
+
+      <label for="comment">Comment:</label>
+      <textarea id="comment" rows="4" placeholder="Write your comment..." required></textarea>
+<p><strong>Recipe rating</strong></p>
+<div class="rating">
+  <input type="radio" id="star5" name="rating" value="5">
+  <label for="star5">★</label>
+  <input type="radio" id="star4" name="rating" value="4">
+  <label for="star4">★</label>
+  <input type="radio" id="star3" name="rating" value="3">
+  <label for="star3">★</label>
+  <input type="radio" id="star2" name="rating" value="2">
+  <label for="star2">★</label>
+  <input type="radio" id="star1" name="rating" value="1">
+  <label for="star1">★</label>
+</div>
+
+
+      <button type="submit">Post</button>
+    </form>
+  </div>
+
+  <hr>
+
+  <h2>You'll Also Love</h2>
+  <img src="muffin.jfif" alt="muffin" width="19%" height="2%">
+<h4>chocolate muffin</h4>
+
+
+
+
+
+
+</body>
+</html>
