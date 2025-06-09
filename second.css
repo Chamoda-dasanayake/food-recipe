@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eee0eb;
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.6;
+  padding-top: 80px; 
+}
+
+h1 {
+  color: #811456;
+  font-size: 50px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+h2, h3, h4 {
+  color: #590644;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.pancake {
+  max-width: 100%;
+  margin: auto;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  background-color: #eee0eb;
+}
+
+.pancake img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+p {
+  font-size: 16px;
+  padding: 0 20px;
+}
+
+.my-button {
+  font-size: 14px;
+  background-color: #b352c4;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  position: fixed;
+  top: 120px;
+  left: 20px;
+  z-index: 999;
+}
+
+.my-button:hover {
+  background-color: #811456;
+}
+
+.nutrition, .review-form {
+  background-color: #f9f9f9;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+form button {
+  background-color: #b534b5;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+form button:hover {
+  background-color: #571461;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.rating input:checked + label,
+.rating input:checked + label ~ label {
+  color: #C71585;
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #FF1493;
+}
+
+.jump-btn {
+  background-color: #8a33bc;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 15px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.jump-btn:hover {
+  background-color: #510a67;
+}
+
+.navbar {
+  background-color: #590644;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-menu li {
+  position: relative;
+  padding: 10px 15px;
+  border-radius: 4px;
+  list-style: none;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+.nav-menu a:hover {
+  color: #020201;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #3e2639;
+  padding: 10px 0;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  border-radius: 5px;
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+}
+
+.dropdown-menu li a {
+  color: white;
+  display: block;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.nav-menu li:hover {
+  background-color: #afafac;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-left: 20px;
+}
+
+.search-form input {
+  padding: 8px 12px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 160px;
+}
+
+.search-form button {
+  background-color: #3d3c39;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+  background-color: #494741;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-form {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .pancake img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .review-form, .nutrition {
+    padding: 20px;
+    max-width: 90%;
+  }
+}
